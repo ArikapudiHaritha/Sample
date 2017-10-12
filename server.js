@@ -16,7 +16,7 @@ app.use(bodyParser.urlencoded({ extended: true })); // support encoded bodies
 var router = express.Router();
 var mongo = require('mongodb');
 var mongoClient = mongo.MongoClient;
-var url = 'mongodb://localhost:27017/flight';
+var url = 'mongodb://localhost:27017/survey';
 app.use(express.static(__dirname ));
 
 app.get('/index',function(req,res){
@@ -25,7 +25,7 @@ app.get('/index',function(req,res){
 });
 
 //For fetching the data from the mongoDB
-app.get('/flightDetails', function(req,res){
+app.get('/surveyDetails', function(req,res){
     var newUser = {
 	email: req.query.email
 	};

@@ -13,9 +13,17 @@ and open the template in the editor.
       <br>
 <style type="text/css">
   form.tab-form-demo .tab-pane {
-    margin: 20px 20px;
+    margin: 30px 30px;
+  }
+  .but{
+      height: 50px;
+      width: 275px
   }
 </style>
+<h1> Welcome !! kindly take the following survey for medical camp</h1>
+<form action="second.html">
+<input type="submit" align="right" value="Learn about services provided" class="but">
+</form>
     <div class="container container-table">
     <div class="row vertical-center-row">
         <div class="col-md-4 col-md-offset-4">
@@ -54,8 +62,8 @@ and open the template in the editor.
         <div class="form-group input-group">
         <div class="row">
         <div class="col-md-12 ">
-            <label>what is your fav sport: &nbsp; </label><select  id="selectedOption" ng-model="selectedOption" ng-options="option.name for option in options">
-            </select> <br>  <label>what is fav city: &nbsp;</label><select ng-model="selectedOptionTo" ng-options="option1.name for option1 in optionsTo">
+            <label>Preferred Service: &nbsp; </label><select  id="selectedOption" ng-model="selectedOption" ng-options="option.name for option in options">
+            </select> <br>  <label>Preferred Time : &nbsp;</label><select ng-model="selectedOptionTo" ng-options="option1.name for option1 in optionsTo">
 </select>
 <!-- Write code for drowpdown list, go to below link for sample code or check slides.
 // http://www.w3schools.com/angular/tryit.asp?filename=try_ng_select_selected--> 
@@ -68,11 +76,13 @@ and open the template in the editor.
         </div>
              <button type="button"   class="btn btn-primary" ng-click="formNext()" >Next</button>
           </div>
+    
         </ng-form>
       </uib-tab>
       <uib-tab index="2" heading="STEP 3" id="step3">
            <ng-form  name="nestedForm" ng-submit="">
-               <h3 id="display"></h3>
+               <h2>Thankyou for taking the survey</h2>
+               <h3 id="display"> </h3>
               <!-- Now display the firstname,lastname,email,phone, departure and arrival places on the selected dates--> 
               
            </ng-form>
@@ -101,40 +111,40 @@ angular.module('ui.bootstrap.demo').controller('TabsDemoCtrl', function ($scope,
   //dropdown
    $scope.options = [
     {
-      name: 'select your fav sport',
-      value: 'select your fav sport'
+      name: 'Select your preferred service',
+      value: 'Select your preferred service'
 },
     {
-      name: 'badminton',
-      value: 'badminton'
+      name: 'Flu Shot',
+      value: 'Flu Shot'
     },
     {
-      name: 'basketball',
-      value: 'basketball'
+      name: 'HIV test',
+      value: 'HIV test'
     },
     {
-      name: 'cricket',
-      value: 'cricket'
+      name: 'complete blood count',
+      value: 'complete blood count'
     },
     
   ];
 
   $scope.optionsTo = [
     {
-      name: 'select your fav place',
-      value: 'select your fav place'
+      name: 'select your preferred timmings',
+      value: 'select your preferred timmings'
     },
     {
-      name: 'Boston',
-      value: 'Boston'
+      name: '10AM - 12PM',
+      value: '10AM - 12PM'
     },
     {
-      name: 'New York',
-      value: 'New York'
+      name: '2PM - 4PM',
+      value: '2PM - 4PM'
     },
     {
-      name: 'Chicago',
-      value: 'Chicago'
+      name: '5PM - 7PM',
+      value: '5PM - 7PM'
     },
     
   ];
@@ -162,7 +172,7 @@ angular.module('ui.bootstrap.demo').controller('TabsDemoCtrl', function ($scope,
   .done(function( msg ) {
     $.ajax({
     method: "GET",
-    url: "/flightDetails",
+    url: "/surveyDetails",
     data: { firstname :document.getElementById("fname").value, lastname :document.getElementById("lname").value,email:document.getElementById("email").value}
 })
   .done(function( msg ) {
@@ -183,14 +193,10 @@ angular.module('ui.bootstrap.demo').controller('TabsDemoCtrl', function ($scope,
 
  
  
-});
+}); 
 
 
           </script>
-          <footer>
-              <form action="second.html">
-<input type="submit" value="Check our website">
-</form>
-          </footer>
+         
   </body>
 </html>
